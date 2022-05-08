@@ -1,5 +1,5 @@
 import 299cproject
-from 299cproject import sine_tone
+from 299cproject import playNote
 import sys
 import re
 
@@ -26,11 +26,11 @@ else:
 				ch = a - ord('a') + 1
 
 				if (t == 'm' or t == 'n'):
-					sine_tone(a4, 4)
+					playNote(a4, 4)
 				elif (ch < 13):
-					sine_tone(a4/(halfstep**(13 - ch)), 4)
+					playNote(a4/(halfstep**(13 - ch)), 4)
 				else:
-					sine_tone(a4*(halfstep**(ch - 14)), 4)
+					playNote(a4*(halfstep**(ch - 14)), 4)
 
 
 
