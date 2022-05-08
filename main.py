@@ -1,5 +1,4 @@
-import 299cproject
-from 299cproject import playNote
+from player import playNote
 import sys
 import re
 
@@ -12,7 +11,7 @@ else:
 	n = 100
 	if (len(sys.argv) == 3):
 		n = int(sys.argv[2])
-	with open(sys.argv[1], "r") as f:
+	with open(sys.argv[1], "r") as file:
 		text = file.read(n)
 		text = text.lower()
 		text = re.sub("[^a-z ]","",text)
@@ -26,11 +25,11 @@ else:
 				ch = a - ord('a') + 1
 
 				if (t == 'm' or t == 'n'):
-					playNote(a4, 4)
+					playNote(a4, 0.5)
 				elif (ch < 13):
-					playNote(a4/(halfstep**(13 - ch)), 4)
+					playNote(a4/(halfstep**(13 - ch)), 1)
 				else:
-					playNote(a4*(halfstep**(ch - 14)), 4)
+					playNote(a4*(halfstep**(ch - 14)), 1)
 
 
 
