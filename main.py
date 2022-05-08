@@ -15,7 +15,7 @@ else:
 	with open(sys.argv[1], "r") as f:
 		text = file.read(n)
 		text = text.lower()
-		text = re.sub("[^a-z ]")
+		text = re.sub("[^a-z ]","",text)
 		curr = ""
 		for t in text:
 			curr += t
